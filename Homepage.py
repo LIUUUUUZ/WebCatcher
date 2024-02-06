@@ -8,6 +8,8 @@ os.system("pip install -r requirements.txt")
 st.set_page_config(
     page_title="Homepage",
     page_icon="👋",
+    layout="wide",
+    initial_sidebar_state="auto",
 )
 
 st.write("# Welcome to Streamlit! 👋")

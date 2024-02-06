@@ -1,6 +1,13 @@
 import streamlit as st
 import json
 
+st.set_page_config(
+    page_title="Settings",
+    page_icon="⚙️",
+    layout="wide",
+    initial_sidebar_state="auto",
+)
+
 # read the config file
 with open('config.json','r') as f:
     config = json.load(f)

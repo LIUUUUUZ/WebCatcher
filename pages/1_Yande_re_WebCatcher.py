@@ -6,6 +6,13 @@ import wget
 import os
 import json
 
+st.set_page_config(
+    page_title="Yande_re",
+    page_icon="🔍",
+    layout="wide",
+    initial_sidebar_state="auto",
+)
+
 class ImageSaver():
     def __init__(self) -> None:
         # read the config file
