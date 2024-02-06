@@ -1,4 +1,8 @@
 import streamlit as st
+import os
+
+# download required packages
+os.system("pip install -r requirements.txt")
 
 st.set_page_config(
     page_title="Homepage",
