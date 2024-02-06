@@ -91,6 +91,8 @@ if mode == 'Popular':
     if st.session_state['key'] != key:
         st.session_state['key'] = key
         changed = True
+    if not os.path.exists('temp'):
+        changed = True
 
     st.header(" Popular Images of the " + key) 
     
@@ -115,12 +117,17 @@ if mode == 'Popular':
 
     if st.session_state['status'] == 200:
         if not isPreview:
-            x = st.slider("Select a value", 1, len(st.session_state['imgList']))
-            # st.write(st.session_state['imgList'][x-1])
-            if os.path.exists('temp.jpg'):
-                os.remove('temp.jpg')
-            wget.download(st.session_state['imgList'][x-1], 'temp.jpg')
-            st.image('temp.jpg', caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+            if not isShowAll:
+                x = st.slider("Select a value", 1, len(st.session_state['imgList']))
+                # st.write(st.session_state['imgList'][x-1])
+                if os.path.exists('single_temp'):
+                        os.system('rm -r single_temp')
+                os.mkdir('single_temp')
+
+                wget.download(st.session_state['imgList'][x-1], 'single_temp/temp.jpg')
+                st.image('single_temp/temp.jpg', caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+            if isShowAll:
+                st.write("To be continued...")
         if isPreview:
             if not isShowAll:
                 x = st.slider("Select a value", 1, len(st.session_state['previewList']))
