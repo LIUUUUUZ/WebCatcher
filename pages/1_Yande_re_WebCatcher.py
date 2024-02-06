@@ -5,7 +5,6 @@ import time
 import wget
 import os
 import json
-import multiprocessing
 
 class ImageSaver():
     def __init__(self) -> None:
