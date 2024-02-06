@@ -1,0 +1,9 @@
+{
+    "yande_re": {
+        "auto_folder_path_d": "./daily_pictures/",
+        "auto_folder_path_w": "./weekly_pictures/",
+        "auto_folder_path_m": "./monthly_pictures/",
+        "auto_folder_path_y": "./yearly_pictures/",
+        "manual_folder_path": "./pictures/"
+    }
+}
