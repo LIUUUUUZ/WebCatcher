@@ -4,6 +4,9 @@ import os
 # download required packages
 os.system("pip install -r requirements.txt")
 
+# set page title
+st.set_page_config(page_title="WebCatcher", page_icon="🕷️", layout="centered", initial_sidebar_state="auto", menu_items=None)
+
 st.set_page_config(
     page_title="Homepage",
     page_icon="👋",
